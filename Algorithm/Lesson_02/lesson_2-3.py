@@ -21,10 +21,7 @@ def reverse_number(number):
         return str(abs(number))
     return ('-' if number < 0 else '') + str(abs(number) % 10) + reverse_number(abs(number) // 10)
 
-
 # ввод числа от пользователя
 number = int(input('Введите целое число: '))
-# вызов функции
-output = reverse_number(number)
 # вывод результата
-print(output)
+print(int(reverse_number(number)))
