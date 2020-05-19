@@ -32,7 +32,7 @@ from functools import reduce
 
 
 # инициализация функции вывода таблицы умножения
-def multiple_table(a, b):
+def multiple_table(a=10, b=10):
     """
     Функция выводит таблицу умножения в заданных диапазонах,
         где a и b - крайние значения таблицы.
@@ -49,4 +49,4 @@ def multiple_table(a, b):
 
 
 # вызов функции
-multiple_table(5, 5)
+multiple_table(a=5, b=5)
