@@ -21,10 +21,9 @@ def print_directory_contents(sPath):
 ]
 """
 
-from os import listdir
-
-
 # endregion
+
+from os import listdir
 
 # инициализация функции вывода файлов
 def print_directory_contents(sPath):
