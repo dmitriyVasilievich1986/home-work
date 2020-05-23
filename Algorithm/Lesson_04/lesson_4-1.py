@@ -9,6 +9,7 @@
 import timeit
 import cProfile
 
+
 # region инициализация функций
 
 
@@ -54,27 +55,35 @@ def main(number):
     devil_number_recursion(number)
     devil_number_double_cycle(number)
 
+
 # endregion
+
+
+# сначала проверяем, что функции вообще работают
+print(devil_number_cycle(100))
+print(devil_number_recursion(100))
+print(devil_number_double_cycle(100))
 
 # region timeit
 
 
-print(timeit.timeit('devil_number_cycle(50)', number=10000, globals=globals()))             # 0.0527711
-print(timeit.timeit('devil_number_recursion(50)', number=10000, globals=globals()))         # 0.0963047
-print(timeit.timeit('devil_number_double_cycle(50)', number=10000, globals=globals()))      # 0.6452088
 print('*' * 25)
-print(timeit.timeit('devil_number_cycle(100)', number=10000, globals=globals()))            # 0.10103309999999999
-print(timeit.timeit('devil_number_recursion(100)', number=10000, globals=globals()))        # 0.1987589999999999
-print(timeit.timeit('devil_number_double_cycle(100)', number=10000, globals=globals()))     # 2.2830412
+print(timeit.timeit('devil_number_cycle(50)', number=10000, globals=globals()))  # 0.0527711
+print(timeit.timeit('devil_number_recursion(50)', number=10000, globals=globals()))  # 0.0963047
+print(timeit.timeit('devil_number_double_cycle(50)', number=10000, globals=globals()))  # 0.6452088
 print('*' * 25)
-print(timeit.timeit('devil_number_cycle(200)', number=10000, globals=globals()))            # 0.20085489999999995
-print(timeit.timeit('devil_number_recursion(200)', number=10000, globals=globals()))        # 0.3962030999999997
-print(timeit.timeit('devil_number_double_cycle(200)', number=10000, globals=globals()))     # 8.667773
+print(timeit.timeit('devil_number_cycle(100)', number=10000, globals=globals()))  # 0.10103309999999999
+print(timeit.timeit('devil_number_recursion(100)', number=10000, globals=globals()))  # 0.1987589999999999
+print(timeit.timeit('devil_number_double_cycle(100)', number=10000, globals=globals()))  # 2.2830412
 print('*' * 25)
-print(timeit.timeit('devil_number_cycle(750)', number=10000, globals=globals()))            # 0.8272431000000005
-print(timeit.timeit('devil_number_recursion(750)', number=10000, globals=globals()))        # 1.697936799999999
+print(timeit.timeit('devil_number_cycle(200)', number=10000, globals=globals()))  # 0.20085489999999995
+print(timeit.timeit('devil_number_recursion(200)', number=10000, globals=globals()))  # 0.3962030999999997
+print(timeit.timeit('devil_number_double_cycle(200)', number=10000, globals=globals()))  # 8.667773
+print('*' * 25)
+print(timeit.timeit('devil_number_cycle(750)', number=10000, globals=globals()))  # 0.8272431000000005
+print(timeit.timeit('devil_number_recursion(750)', number=10000, globals=globals()))  # 1.697936799999999
 # и тут я ушел пить чай))
-print(timeit.timeit('devil_number_double_cycle(750)', number=10000, globals=globals()))     # 134.20739540000002
+print(timeit.timeit('devil_number_double_cycle(750)', number=10000, globals=globals()))  # 134.20739540000002
 
 # endregion
 
