@@ -11,9 +11,15 @@
 
 # endregion
 
+# импортируем библиотеку
 import re
+import os
 
+
+# инициализация функции выделения названия файла из пути
 def find_filename_by_path(path):
-    return re.split(r'[/,.]', path)[-2]
+    return re.split(r'[\\,/,.]', path)[-2]
 
-print(find_filename_by_path(r"c:/Users/Professional/Documents/Projects/Python/home-work/interview preparation/Lesson 03/lesson_3-1.py"))
+
+# вызов функции
+print(find_filename_by_path(fr'{os.getcwd()}\lesson_3-1.py'))

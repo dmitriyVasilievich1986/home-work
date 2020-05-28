@@ -11,12 +11,15 @@
 
 # endregion
 
+# инициализируем списки
 a = ['a', 'b', 'c', 'd']
 b = [1, 2, 3, 4, 5]
 
 
+# инициализируем функцию слияния двух списков
 def dict_init(a, b):
     return {a[x]: b[x] if x < len(b) else None for x in range(len(a))}
 
 
+# вызов функции
 print(dict_init(a, b))

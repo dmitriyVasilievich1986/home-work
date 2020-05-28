@@ -2,33 +2,54 @@
 
 """
 Усовершенствовать первую функцию из предыдущего примера.
-Необходимо во втором списке часть строковых значений заменить
-на значения типа example345 (строка+число).
-Далее — усовершенствовать вторую функцию из предыдущего примера (функцию извлечения данных).
-Дополнительно реализовать поиск определенных подстрок в файле по следующим условиям:
-вывод первого вхождения, вывод всех вхождений.
-Реализовать замену всех найденных подстрок на новое значение и вывод всех подстрок,
-состоящих из букв и цифр и имеющих пробелы только в начале и конце — например, example345.
+
+Необходимо просканировать текстовый файл, созданный на предыдущем задании
+и реализовать создание и запись нового текстового файла
+
+В новый текстовый файл обеспечить запись строк вида:
+
+zmsebjvdgi zmsebjvdgi
+ychpwljtzn ychpwljtzn
+...
+
+Т.е. извлекаются строки из первого текстового файла
+а в новый они записываются в виде, где вместо числа ставится строка
+
+Здесь необходимо использовать регулярные выражения.
 """
 
 # endregion
 
+# импортируем библиотеки
+import re
 import os
 from random import randint
 
+# инициализируем константу
 LIST_SIZE = 5
 
-a = [''.join([chr(randint(ord('a'), ord('z'))) for x in range(5)]) + ''.join([str(randint(0, 10)) for x in range(3)]) for x in range(LIST_SIZE)]
+# инициализируем списки
+a = [''.join([chr(randint(ord('a'), ord('z'))) for x in range(5)]) + ''.join([str(randint(0, 9)) for x in range(3)]) for
+     x in range(LIST_SIZE)]
 b = [randint(0, 100) for x in range(LIST_SIZE)]
-zip_list = zip(b,a)
+zip_list = zip(b, a)
 
-print(a)
 
+# инициализируем функцию построчного чтения файла
 def open_fileasd(file_path):
+    path = fr'{os.getcwd()}/zip2.txt'
+    try:
+        os.remove(path)
+    except:
+        pass
     with open(file_path, 'r') as my_file:
         for line in my_file.readlines():
-            print(line, end='')
+            with open(path, 'a') as save_file:
+                save_file.writelines(
+                    re.sub(r'\b\d+', ''.join(chr(randint(ord('a'), ord('z'))) for x in range(5)), line))
 
+
+# инициализируем функцию построчной записи файла
 def save_zip_in_file(zip_list):
     file_path = fr'{os.getcwd()}/zip.txt'
     with open(file_path, 'w') as my_file:
@@ -36,4 +57,6 @@ def save_zip_in_file(zip_list):
             my_file.writelines(f'{item[0]}  {item[1]}\n')
     open_fileasd(file_path)
 
-# save_zip_in_file(zip_list)
+
+# вызов функции
+save_zip_in_file(zip_list)

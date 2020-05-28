@@ -15,20 +15,27 @@
 
 # endregion
 
+# импортируем библиотеки
 import os
 from random import randint
 
+# инициализируем константу
 LIST_SIZE = 5
 
+# инициализируем списки
 a = [''.join(chr(randint(ord('a'), ord('z'))) for x in range(5)) for x in range(LIST_SIZE)]
 b = [randint(0, 100) for x in range(LIST_SIZE)]
-zip_list = zip(b,a)
+zip_list = zip(b, a)
 
+
+# инициализируем функцию построчного чтения файла
 def open_fileasd(file_path):
     with open(file_path, 'r') as my_file:
         for line in my_file.readlines():
             print(line, end='')
 
+
+# инициализируем функцию построчной записи файла
 def save_zip_in_file(zip_list):
     file_path = fr'{os.getcwd()}/zip.txt'
     with open(file_path, 'w') as my_file:
@@ -36,5 +43,6 @@ def save_zip_in_file(zip_list):
             my_file.writelines(f'{item[0]}  {item[1]}\n')
     open_fileasd(file_path)
 
-save_zip_in_file(zip_list)
 
+# вызов функции
+save_zip_in_file(zip_list)

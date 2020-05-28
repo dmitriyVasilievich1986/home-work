@@ -10,17 +10,21 @@
 
 # endregion
 
+# импортируем библиотеку
 import re
 
+# инициализация бесконечного цикла
 while True:
+    # проверяем, что введено число
     try:
         number = float(input('\nВведите число: '))
     except ValueError:
         print('Вы ввели не число')
-        continue    
+        continue
     if number == int(number):
         print('Целое число')
         continue    
+    # проверяем равны ли обе части числа
     new_list = re.split(r'[.]', str(number))
     if int(new_list[0]) == int(new_list[1]):
         print(f'Число {number} имеет равные числа до и после запятой')
