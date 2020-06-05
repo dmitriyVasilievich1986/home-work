@@ -9,13 +9,12 @@
 # endregion
 
 # импортируем библиотеку
-from random import randint
+from random import random
 from collections import deque
 
 # инициализация констант и переменных
 ARRAY_LENGTH = 10
-array = [randint(0, 50) for x in range(ARRAY_LENGTH)]
-
+array = [round(random() * 50, 2) for x in range(ARRAY_LENGTH)]
 
 # инициалиация функции сортировки
 def merge_sort(array):
