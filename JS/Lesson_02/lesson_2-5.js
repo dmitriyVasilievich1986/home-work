@@ -1,8 +1,10 @@
+"use strict"
+
 // обяъвляем константы типов математических операций
-const SUBSTRACT = "SUBSTRACT"
-const MULTIPLY = "MULTIPLY"
-const SUMMARY = "SUMMARY"
-const DIVIDE = "DIVIDE"
+const SUBSTRACT = "SUBSTRACT";
+const MULTIPLY = "MULTIPLY";
+const SUMMARY = "SUMMARY";
+const DIVIDE = "DIVIDE";
 
 // объявляем функцию
 function math_function(arg1, arg2, operation) {
@@ -16,14 +18,14 @@ function math_function(arg1, arg2, operation) {
      */
     switch (operation) {
         case SUMMARY:
-            return two_numbers_summarize(arg1, arg2)
+            return two_numbers_summarize(arg1, arg2);
         case SUBSTRACT:
-            return two_numbers_substracts(arg1, arg2)
+            return two_numbers_substracts(arg1, arg2);
         case MULTIPLY:
-            return two_numbers_multiply(arg1, arg2)
+            return two_numbers_multiply(arg1, arg2);
         case DIVIDE:
-            return two_numbers_divides(arg1, arg2)
+            return two_numbers_divides(arg1, arg2);
         default:
-            return 0
+            return 0;
     }
 }

@@ -8,7 +8,7 @@ function two_numbers_summarize(a, b) {
      * @param {number} b second integer number
      * @returns {number}
      */
-    return a + b
+    return a + b;
 }
 
 //#endregion
@@ -21,7 +21,7 @@ function two_numbers_substracts(a, b) {
      * @param {number} b second integer number
      * @returns {number}
      */
-    return a - b
+    return a - b;
 }
 
 //#endregion
@@ -34,7 +34,7 @@ function two_numbers_multiply(a, b) {
      * @param {number} b second integer number
      * @returns {number}
      */
-    return a * b
+    return a * b;
 }
 
 //#endregion
@@ -47,7 +47,7 @@ function two_numbers_divides(a, b) {
      * @param {number} b second integer number
      * @returns {number}
      */
-    return a / b
+    return a / b;
 }
 
 //#endregion
