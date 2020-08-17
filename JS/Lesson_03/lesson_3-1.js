@@ -8,4 +8,4 @@ for (let cycle = 0; cycle < 11; cycle++) {
         const postScript = cycle % 2 === 0 ? '-четное число' : '-нечетное число'; // вычисляем остаток
         console.log(`${cycle}${postScript}`);   // выводим получившееся выражение
     }
-}
+};

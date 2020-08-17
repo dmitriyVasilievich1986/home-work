@@ -17,7 +17,7 @@ const products = [
 ];
 
 // инициализируем переменную
-const discount = 0.15
+const discount = 0.15;
 
 // проводим скидку
 products.forEach(product => product.price -= product.price * discount);
